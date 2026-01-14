@@ -118,6 +118,40 @@
                 = <&out OUT_BLE>,
                   <&bt BT_SEL 3>;
         };
+        vim_write: vim_write {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&kp ESC>,
+                  <&kp LS(SEMICOLON)>,
+                  <&kp W>,
+                  <&kp A>,
+                  <&kp RETURN>;
+        };
+        vim_close: vim_close {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&kp ESC>,
+                  <&kp LS(SEMICOLON)>,
+                  <&kp Q>,
+                  <&kp A>,
+                  <&kp RETURN>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+        combo_vim_write {
+            timeout-ms = <50>;
+            key-positions = <26 27 28>;
+            bindings = <&vim_write>;
+        };
+        combo_vim_close {
+            timeout-ms = <50>;
+            key-positions = <31 32 33>;
+            bindings = <&vim_close>;
+        };
     };
 
     keymap {
