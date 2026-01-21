@@ -910,6 +910,32 @@
                 , <&kp DOT>
                 , <&kp DOT>;
         };
+
+        nvim_write_all: nvim_write_all {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <0>;
+            wait-ms = <0>;
+            bindings = <&macro_tap>
+                , <&kp ESC>
+                , <&kp COLON>
+                , <&kp W>
+                , <&kp A>
+                , <&kp RETURN>;
+        };
+
+        nvim_close_all: nvim_close_all {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <0>;
+            wait-ms = <0>;
+            bindings = <&macro_tap>
+                , <&kp ESC>
+                , <&kp COLON>
+                , <&kp Q>
+                , <&kp A>
+                , <&kp RETURN>;
+        };
     };
 };
 
@@ -1514,12 +1540,12 @@
 
         layer_HRM_WinLinx {
             bindings = <
-            &kp EQUAL                          &kp N1                         &kp N2                           &kp N3                           &kp N4  &kp N5                                                                                                                                                         &kp N6                            &kp N7                            &kp N8                          &kp N9                           &kp N0         &kp MINUS
-              &kp TAB                         &kp SQT                      &kp COMMA                          &kp DOT                            &kp P   &kp Y                                                                                                                                                          &kp F                             &kp G                             &kp C                           &kp R                            &kp L          &kp BSLH
-              &kp ESC  &HRM_left_pinky_v1B_TKZ LGUI A  &HRM_left_ring_v1B_TKZ LALT O  &HRM_left_middy_v1B_TKZ LCTRL E  &HRM_left_index_v1B_TKZ LSHFT U   &kp I                                                                                                                                                          &kp D  &HRM_right_index_v1B_TKZ RSHFT H  &HRM_right_middy_v1B_TKZ RCTRL T  &HRM_right_ring_v1B_TKZ LALT N  &HRM_right_pinky_v1B_TKZ RGUI S          &kp SEMI
- &magic LAYER_Magic 0                        &kp FSLH                          &kp Q                            &kp J                            &kp K   &kp X                                                                                                                                                          &kp B                             &kp M                             &kp W                           &kp V                            &kp Z  &td_LAYER_Keypad
-                                                                            &kp HOME                         &kp LEFT                        &kp RIGHT                                                                                                                                                                                                   &kp UP                          &kp DOWN                         &kp END
-                                                                                                                                                                &thumb_v2_TKZ LAYER_Cursor BSPC  &thumb_v2_TKZ LAYER_Keypad DEL  &kp LCTRL  &kp RALT  &thumb_v2_TKZ LAYER_Mouse RET  &space_v3_TKZ LAYER_Symbol SPACE
+            &kp EQUAL                          &kp N1                         &kp N2                           &kp N3                           &kp N4  &kp N5                                                                                                                                                                      &kp N6                            &kp N7                            &kp N8                          &kp N9                           &kp N0         &kp MINUS
+              &kp TAB                         &kp SQT                      &kp COMMA                          &kp DOT                            &kp P   &kp Y                                                                                                                                                                       &kp F                             &kp G                             &kp C                           &kp R                            &kp L          &kp BSLH
+              &kp ESC  &HRM_left_pinky_v1B_TKZ LGUI A  &HRM_left_ring_v1B_TKZ LALT O  &HRM_left_middy_v1B_TKZ LCTRL E  &HRM_left_index_v1B_TKZ LSHFT U   &kp I                                                                                                                                                                       &kp D  &HRM_right_index_v1B_TKZ RSHFT H  &HRM_right_middy_v1B_TKZ RCTRL T  &HRM_right_ring_v1B_TKZ LALT N  &HRM_right_pinky_v1B_TKZ RGUI S          &kp SEMI
+ &magic LAYER_Magic 0                        &kp FSLH                          &kp Q                            &kp J                            &kp K   &kp X                                                                                                                                                                       &kp B                             &kp M                             &kp W                           &kp V                            &kp Z  &td_LAYER_Keypad
+                                                                            &kp HOME                         &kp LEFT                        &kp RIGHT                                                                                                                                                                                                                &kp UP                          &kp DOWN                         &kp END
+                                                                                                                                                                &thumb_v2_TKZ LAYER_Cursor BSPC  &thumb_v2_TKZ LAYER_Keypad DEL  &nvim_write_all  &nvim_close_all  &thumb_v2_TKZ LAYER_Mouse RET  &space_v3_TKZ LAYER_Symbol SPACE
             >;
         };
 
